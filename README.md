@@ -1,48 +1,34 @@
-# 🛒 Sodimac Shop - SPA React (Next.js)
+# Sodimac Shop
 
-Aplicación web SPA desarrollada con React y Next.js que permite visualizar productos, consultar su detalle y gestionar un carrito de compras.
-
----
-
-## 🚀 Demo
-
-> Link en Vercel
+Aplicación web desarrollada como prueba técnica. Permite visualizar productos, consultar su detalle y gestionar un carrito de compras con persistencia local.
 
 ---
 
-## 🧰 Tecnologías utilizadas
+## Demo
 
-* ⚛️ React
-* ▲ Next.js
-* 🟦 TypeScript
-* 📦 pnpm (gestor de paquetes)
-* 🎨 CSS Modules
-* 🧩 Lucide React (iconos)
+[Shop SPA](https://sodimac-shop-spa.vercel.app/)
 
 ---
 
-## 📦 Instalación y ejecución
+## Tecnologías
 
-### 1. Clonar el repositorio
+* React + Next.js
+* TypeScript
+* CSS Modules
+* pnpm
+
+---
+
+## Instalación
 
 ```bash
-git clone <URL_DEL_REPO>
+git clone https://github.com/yilmarvegag/sodimac-shop-spa
 cd sodimac-shop
-```
-
-### 2. Instalar dependencias
-
-```bash
 pnpm install
-```
-
-### 3. Ejecutar el proyecto
-
-```bash
 pnpm dev
 ```
 
-La aplicación estará disponible en:
+Aplicación disponible en:
 
 ```
 http://localhost:3000
@@ -50,131 +36,72 @@ http://localhost:3000
 
 ---
 
-## 🧩 Funcionalidades
+## Funcionalidades
 
-### 🏠 Home (Listado de productos)
+### Listado de productos
 
-* Consumo de API:
-
-  ```
-  GET https://apim-dev-proxy.sodhc.co/test-jasson/api/category
-  ```
-* Visualización en cards:
-
-  * Imagen del producto
-  * Nombre
-  * Precio
-* Botón para agregar al carrito
-* Popup de confirmación al agregar producto
+* Consumo de API externa
+* Visualización en cards
+* Imagen, nombre y precio
+* Opción de agregar al carrito
 
 ---
 
-### 📄 Detalle de producto
+### Detalle de producto
 
-* Navegación desde la card
-* Información detallada del producto
-* Botón para agregar al carrito
-* Botón para regresar
+* Navegación desde el listado
+* Información ampliada
+* Acción de agregar al carrito
 
 ---
 
-### 🛒 Carrito de compras
+### Carrito
 
-* Listado de productos agregados
-* Manejo de cantidades:
-
-  * Incrementar
-  * Disminuir
+* Visualización de productos seleccionados
+* Manejo de cantidades
 * Eliminación de productos
-* Cálculo de:
+* Cálculo de totales
 
+---
+
+### Finalizar compra
+
+* Generación de archivo JSON con:
+
+  * Producto
+  * Cantidad
   * Precio unitario
-  * Precio total
-* Botón de finalizar compra:
-
-  * Genera archivo JSON con:
-
-    * Producto
-    * Cantidad
-    * Precio unitario
-    * Precio total
+  * Total
 
 ---
 
-### 💾 Persistencia
+### Persistencia
 
-* Uso de `localStorage` para guardar el carrito
-* Recuperación automática al recargar la aplicación
-
----
-
-## 🧠 Decisiones técnicas
-
-### 📌 Manejo de estado
-
-Se utilizó **React Context API** para:
-
-* Centralizar la lógica del carrito
-* Evitar prop drilling
-* Facilitar la escalabilidad
+El carrito se almacena en `localStorage` y se recupera al recargar la aplicación.
 
 ---
 
-### 📌 Arquitectura
+## Decisiones técnicas
 
-Se implementó una estructura basada en separación por responsabilidades:
+Se utilizó **Context API** para manejar el estado global del carrito, evitando prop drilling y facilitando la escalabilidad.
 
-```
-src/
- ├── components/   → Componentes reutilizables
- ├── context/      → Manejo de estado global (Cart)
- ├── hooks/        → Hooks personalizados
- ├── types/        → Tipos TypeScript
- ├── utils/        → Funciones auxiliares
- ├── styles/       → Estilos globales y módulos CSS
-```
+La estructura del proyecto se organizó separando responsabilidades:
 
----
+* componentes reutilizables
+* lógica de negocio
+* tipado
+* utilidades
 
-### 📌 Estilos
-
-* Uso de **CSS Modules**
-* Evita colisiones de clases
-* Facilita mantenimiento
+Se optó por **CSS Modules** para mantener encapsulación de estilos.
 
 ---
 
-### 📌 Manejo de datos
+## Consideraciones
 
-* Separación de lógica en helpers (`utils`)
-* Tipado fuerte con TypeScript
-
----
-
-## ⚠️ Consideraciones
-
-* Se priorizó claridad y escalabilidad del código
-* La UI es responsive y funcional en diferentes dispositivos
-* Se optimizó la experiencia de usuario con feedback visual (popups, iconos)
+La solución prioriza claridad en la estructura, separación de responsabilidades y una experiencia de usuario simple.
 
 ---
 
-## 📈 Posibles mejoras
+## Autor
 
-* Implementar testing (Jest / React Testing Library)
-* Manejo de estados con Zustand o Redux Toolkit
-* Implementar loading skeletons
-* Manejo de errores en API
-* Optimización de imágenes con next/image
-
----
-
-## 👨‍💻 Autor
-
-Desarrollado por **Yilmar Vega**
-
----
-
-## 📄 Licencia
-
-Este proyecto fue desarrollado como prueba técnica.
+Yilmar Vega
