@@ -1,3 +1,9 @@
+export type ApiResponse = {
+  data: {
+    results: Product[];
+  };
+};
+
 export interface Price {
   label: string;
   type: string;

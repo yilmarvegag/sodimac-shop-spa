@@ -1,4 +1,3 @@
-import React from "react";
 import { useProducts } from "../src/hooks/useProducts";
 import ProductCard from "../src/components/ui/ProductCard";
 import styles from "../styles/Home.module.css";
